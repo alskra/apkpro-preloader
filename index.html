@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>APK Pro Preloader</title>
+    <style>
+        @keyframes preloader {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .preloader {
+            position: fixed;
+            inset: 0;
+            background: #fff;
+        }
+
+        .preloader__logo {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 50vmin;
+            height: 50vmin;
+            -webkit-mask: url("preloader-logo.svg") no-repeat 50% / contain;
+            mask: url("preloader-logo.svg") no-repeat 50% / contain;
+        }
+
+        .preloader__logo::before {
+            content: "";
+            position: absolute;
+            inset: 50%;
+            margin: -100%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(rgba(0, 114, 188, 0.5), #1b3281 10deg, #0072bc 350deg, rgba(0, 114, 188, 0.5));
+            animation: preloader 1.3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader__logo"></div>
+</div>
+</body>
+</html>
